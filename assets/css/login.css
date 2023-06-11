@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Crimson+Pro:ital', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('./background6.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--white);
+    border-left: 1px solid var(--cultured);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 80%);
+    border: 3px solid var(--white);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 70%);
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.has-scrollbar {
+    padding-bottom: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+    width: 12px; /* for vertical scroll */
+    height: 12px; /* for horizontal scroll */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: solid var(rgba(255, 255, 255, 0.5));
+    border-radius: 20px;
+}
+
+.dangky {
+    margin-top: 300px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.forget {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.forget label input {
+    margin-left: 10px;
+    margin-bottom: 2px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.dongy {
+    margin-right: 80px;
+}
+
+.ghinho {
+    margin-right: 110px;
+    vertical-align: middle;
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+    display: inline;
+    text-decoration: underline;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+.btndangnhap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.register {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+
+.closed {
+    display: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.show-password {
+    display: none;
+}
+
+.show-password + input[type="password"] {
+    display: none;
+}
+
+.show-password + input[type="password"] ~ label[for="password"] {
+    display: none;
+}
+
+.show-password + input[type="password"] ~ .toggle-password::before {
+    content: "\f441";
+}
+
+.show-password + input[type="password"] ~ .toggle-password::after {
+    content: "Ẩn mật khẩu";
+}
+
+input[type="password"]:not(.show-password) {
+    display: block;
+}
+
+input[type="password"]:not(.show-password) ~ label[for="password"] {
+    display: block;
+}
+
+input[type="password"]:not(.show-password) ~ .toggle-password::before {
+    content: "\f439";
+}
+
+input[type="password"]:not(.show-password) ~ .toggle-password::after {
+    content: "Hiển thị mật khẩu";
+}
+
+/* Media Queries */
+@media screen and (max-width: 300px) {
+    .form-box {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+    .inputbox {
+        width: 100%;
+    }
+    .register {
+        margin-top: 15px;
+    }
+}
